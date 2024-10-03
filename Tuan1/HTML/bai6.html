@@ -55,7 +55,7 @@
             padding: 12px 25px;
             background-color: teal;
             color: white;
-            border: none;
+            border: 2px solid black;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
@@ -65,7 +65,7 @@
             background-color: #006666;
         }
         #first-name {
-            width: 300px;
+            width: 250px;
         }
         #last-name {
             width: 100px;
@@ -73,23 +73,34 @@
         .flex-container {
             display: flex;
             justify-content: space-between; 
-    }       
+        }       
+        .flex-item {
+            flex: 1; 
+            margin-right: 10px; 
+        }
 
-    .flex-item {
-        flex: 1; 
-        margin-right: 10px; 
-    }
+        .flex-item:last-child {
+            margin-right: 0; 
+        }
 
-    .flex-item:last-child {
-        margin-right: 0; 
-    }
+        input[type="text"] {
+            width: 100%; 
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .name-group {
+            display: flex;
+            align-items: center; 
+        }
 
-    input[type="text"] {
-        width: 100%; 
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+        .name-group label {
+            margin-right: 10px; 
+            white-space: nowrap;
+        }
+        .name-group input:last-child {
+            margin-right: 0; 
+        }
     </style>
 </head>
 <body>
@@ -100,42 +111,43 @@
         </div>
 
         <form action="#">
-            <div class="form-group">
-                <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="first-name">
+            <div class="form-group flex-container">
+                <div class="name-group">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name">
+                </div>
+                <div class=" name-group">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name">
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last-name">
-            </div>
+            
 
-            <div class="form-group">
+            <div class="form-group name-group">
                 <label for="address1">Address #1:</label>
                 <input type="text" id="address1" name="address1">
             </div>
 
-            <div class="form-group">
+            <div class="form-group name-group">
                 <label for="address2">Address #2:</label>
                 <input type="text" id="address2" name="address2">
             </div>
 
-            <div class="form-group">
+            <div class="form-group name-group">
                 <label for="city">City:</label>
                 <input type="text" id="city" name="city">
+                <div class="name-group">
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state">
+                </div>
+                <div class="name-group">
+                    <label for="zip">Zip:</label>
+                    <input type="text" id="zip" name="zip">
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="state">State:</label>
-                <input type="text" id="state" name="state">
-            </div>
-
-            <div class="form-group">
-                <label for="zip">Zip:</label>
-                <input type="text" id="zip" name="zip">
-            </div>
-
-            <div class="form-group">
+            <div class="form-group name-group">
                 <label for="country">Country:</label>
                 <select id="country" name="country">
                     <option value="United States">United States</option>
@@ -143,7 +155,7 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <div class="form-group name-group">
                 <label for="product">Product:</label>
                 <select id="product" name="product">
                     <option value="ScanMaster">ScanMaster</option>
@@ -151,12 +163,12 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <div class="form-group name-group">
                 <label for="date-purchased">Date Purchased:</label>
                 <input type="text" id="date-purchased" name="date-purchased">
             </div>
 
-            <div class="form-group">
+            <div class="form-group name-group">
                 <label for="serial">Serial #:</label>
                 <input type="text" id="serial" name="serial">
             </div>
